@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=text
+comment0.target=Note(java.lang.String)
+comment0.text=\r\n\ Constructs\ a\ note\ with\ given\ text.\r\n\ @param\ text\ message\ to\ be\ stored\ in\ note\r\n
+comment1.params=
+comment1.target=java.lang.String\ getText()
+comment1.text=\r\n\ Getter\ for\ text\ field.\r\n\ @return\ current\ message\ stored\ in\ note\r\n
+comment2.params=newText
+comment2.target=void\ setText(java.lang.String)
+comment2.text=\r\n\ Setter\ for\ text\ field.\r\n\ @param\ newText\ new\ message\ to\ set\ as\ text\ field.\r\n
+comment3.params=
+comment3.target=int\ getId()
+comment3.text=\r\n\ Getter\ for\ note's\ id\ number.\r\n\ @return\ note's\ id\ number\ as\ int.\r\n
+comment4.params=number
+comment4.target=void\ setId(int)
+comment4.text=\r\n\ Setter\ for\ note's\ id\ number.\r\n\ @param\ number\ new\ number\ to\ set\ as\ id\ field.\r\n
+comment5.params=
+comment5.target=int\ getLastId()
+comment5.text=\r\n\ Getter\ for\ static\ lastId\ field.\r\n\ @return\ class\ variable\ lastId\ as\ int.\r\n
+numComments=6
