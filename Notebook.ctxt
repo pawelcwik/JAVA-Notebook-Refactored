@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=
+comment0.target=java.util.ArrayList\ getNotesArray()
+comment0.text=\r\n\ Getter\ for\ notesArray.\r\n\ @return\ notesArray\ of\ Notebook\ object.\r\n
+comment1.params=newNote
+comment1.target=void\ addNote(Note)
+comment1.text=\r\n\ Adds\ note\ to\ notesArray.\r\n\ @param\ newNote\ given\ note\ object\ to\ add\ to\ notebook.\r\n
+comment2.params=newNote
+comment2.target=boolean\ remNote(Note)
+comment2.text=\ Removes\ note\ from\ notesArray,\ returns\ true\ if\ succeded\ or\ \r\n\ false\ if\ not.\r\n\ @param\ newNote\ given\ note\ object\ to\ remove\ from\ notebook.\r\n
+numComments=3
