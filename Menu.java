@@ -11,8 +11,12 @@ public class Menu
     "2.Show note by id\n" +
     "3.Add note\n" +
     "4.Remove note\n" +
-    "5.Modify note";
+    "5.Modify note\n" +
+    "6.Exit";
     
+    /**
+     * Runs menu in loop.
+     */
     public void runMenu() 
     {
         while (true) 
@@ -29,11 +33,19 @@ public class Menu
                 break;
                 case 3: this.addNote();
                 break;
+                case 4: this.removeNote();
+                break;
+                case 5: this.modifyNote();
+                break;
+                case 6: System.exit(1);
                 default: break;
              }
         }
     }
     
+    /**
+     * Shows all notes in notebook, together with id numbers.
+     */
     public void showNotes()
     {
         if  (this.notebook.getNotesArray().size() == 0)
@@ -44,38 +56,88 @@ public class Menu
         {
             for (Note element : this.notebook.getNotesArray())
             {
-                System.out.print(element.getId());
+                System.out.print("\n"+element.getId()+" ");
                 System.out.println(element.getText());
             }
+            System.out.println("\n");
         }
     }
     
+    /**
+     * Asks about id and shows note if such exists.
+     */
     public void showNoteById()
     {
         Scanner in = new Scanner(System.in);
-        System.out.print("Note id number? "); 
+        System.out.print("\nNote id number? "); 
         int answer = in.nextInt();
         for (Note element : this.notebook.getNotesArray())
             {
                 if (answer == element.getId())
                 {
-                    System.out.println(element.getText());
+                    System.out.println("\n"+element.getText()+"\n");
                     return;
                 }
                 
             }
-        System.out.println("\nThere is no note with "+answer+" id\n");
+        System.out.println("\nThere is no note with "+answer+" id.\n");
     }
     
+    /**
+     * Adds note to notebook.
+     */
     public void addNote()
     {
         int newNoteId = Note.getLastId();
         newNoteId += 1;
-        Scanner in = new Scanner(System.in);
-        System.out.print("Write note (id number "+ newNoteId + "): "); 
-        //ERROR! Only takes first word from string!
-        String newNoteText = in.next();
+        Scanner console = new Scanner(System.in);
+        System.out.print("\nWrite note (id number "+ newNoteId + "): "); 
+        String newNoteText = console.nextLine();
         Note newNote = new Note(newNoteText);
         notebook.addNote(newNote);
+        System.out.println("\n");
+    }
+    
+    /**
+     * Removes note from notebook.
+     */
+    public void removeNote()
+    {
+        Scanner console = new Scanner(System.in);
+        System.out.print("\nWrite id number to remove note: "); 
+        int answer = console.nextInt();
+        for (Note element : this.notebook.getNotesArray())
+            {
+                if (answer == element.getId())
+                {
+                    this.notebook.remNote(element);
+                    System.out.println("\nNote removed.\n");
+                    return;
+                }
+            }
+        System.out.println("\nThere is no note with id "+answer+".\n");
+    }
+    
+    /**
+     * Asks about id and modifies note if such exists.
+     */
+    public void modifyNote()
+    {
+        Scanner console = new Scanner(System.in);
+        System.out.print("\nWrite id number to modify note: "); 
+        int answer = console.nextInt();
+        for (Note element : this.notebook.getNotesArray())
+            {
+                if (answer == element.getId())
+                {
+                    Scanner console2 = new Scanner(System.in);
+                    System.out.print("\nWrite new text: ");
+                    String newText = console2.nextLine();
+                    element.setText(newText);
+                    System.out.println("\n");
+                    return;
+                }
+            }
+        System.out.println("\nThere is no note with id "+answer+".\n");
     }
 }

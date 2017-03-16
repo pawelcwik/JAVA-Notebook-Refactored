@@ -1,10 +1,20 @@
 #BlueJ class context
 comment0.params=
 comment0.target=void\ runMenu()
+comment0.text=\r\n\ Runs\ menu\ in\ loop.\r\n
 comment1.params=
 comment1.target=void\ showNotes()
+comment1.text=\r\n\ Shows\ all\ notes\ in\ notebook,\ together\ with\ id\ numbers.\r\n
 comment2.params=
 comment2.target=void\ showNoteById()
+comment2.text=\r\n\ Asks\ about\ id\ and\ shows\ note\ if\ such\ exists.\r\n
 comment3.params=
 comment3.target=void\ addNote()
-numComments=4
+comment3.text=\r\n\ Adds\ note\ to\ notebook.\r\n
+comment4.params=
+comment4.target=void\ removeNote()
+comment4.text=\r\n\ Removes\ note\ from\ notebook.\r\n
+comment5.params=
+comment5.target=void\ modifyNote()
+comment5.text=\r\n\ Asks\ about\ id\ and\ modifies\ note\ if\ such\ exists.\r\n
+numComments=6

@@ -9,5 +9,7 @@ public class MenuTest
         Menu menu = new Menu();
         menu.showNotes();
         System.out.println("Expected: There are no notes in the notebook");
+        
+        
     }
 }
