@@ -1,1 +1,1 @@
-Simple notebook program.
+Simple notebook program created with BlueJ IDE.
