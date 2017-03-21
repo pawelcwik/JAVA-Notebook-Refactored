@@ -13,21 +13,21 @@ import java.util.Scanner;
  */
 public class Notebook
 {
-    private List<Note> notesArray;
+    private List<Note> notes;
 
     public Notebook()
     {
-        this.notesArray = new ArrayList<Note>();
+        this.notes = new ArrayList<Note>();
     }
 
     private void addNote(Note newNote)
     {
-        this.notesArray.add(newNote);
+        this.notes.add(newNote);
     }
 
-    private boolean remNote(Note newNote)
+    boolean remNote(Note newNote)
     {
-        if (this.notesArray.remove(newNote))
+        if (this.notes.remove(newNote))
         {
             return true;
         }
@@ -42,13 +42,13 @@ public class Notebook
      */
     public List<Note> showNotes()
     {
-        if  (this.notesArray.size() == 0)
+        if  (this.notes.size() == 0)
         {
             throw new IllegalStateException();
         }
         else
         {
-            return this.notesArray;
+            return this.notes;
         }
     }
 
@@ -57,7 +57,7 @@ public class Notebook
      */
     public Note showNoteById(int id)
     {
-        for (Note element : this.notesArray)
+        for (Note element : this.notes)
         {
             if (id == element.getId())
             {
@@ -79,7 +79,7 @@ public class Notebook
         Scanner console = new Scanner(System.in);
         System.out.print("\nWrite id number to remove note: ");
         int answer = console.nextInt();
-        for (Note element : this.notesArray)
+        for (Note element : this.notes)
         {
             if (answer == element.getId())
             {
@@ -99,7 +99,7 @@ public class Notebook
         Scanner console = new Scanner(System.in);
         System.out.print("\nWrite id number to modify note: ");
         int answer = console.nextInt();
-        for (Note element : this.notesArray)
+        for (Note element : this.notes)
         {
             if (answer == element.getId())
             {
@@ -112,6 +112,10 @@ public class Notebook
             }
         }
         System.out.println("\nThere is no note with id "+answer+".\n");
+    }
+
+    public int size() {
+        return this.notes.size();
     }
 }
 
