@@ -30,28 +30,39 @@ public class Menu
 
     public void runMenu() 
     {
-        while (true) 
+        Scanner in = new Scanner(System.in);
+        boolean running = true;
+        while (running)
         {
              System.out.println(menuText);
-             Scanner in = new Scanner(System.in);
+
              System.out.print("What would you like to do? "); 
              int answer = in.nextInt();
              switch (answer)
              {
-                case 1: this.showNotes();
-                break;
-                case 2: this.showNoteById();
-                break;
-                case 3: this.addNote();
-                break;
-                case 4: this.removeNote();
-                break;
-                case 5: this.modifyNote();
-                break;
-                case 6: System.exit(1);
-                default: break;
+                case 1:
+                    this.showNotes();
+                    break;
+                case 2:
+                    this.showNoteById();
+                    break;
+                case 3:
+                    this.addNote();
+                    break;
+                case 4:
+                    this.removeNote();
+                    break;
+                case 5:
+                    this.modifyNote();
+                    break;
+                case 6:
+                    running = false;
+                    break;
+                 default:
+                     System.out.println("Nieznana komenda. Uzyj 1-6");
              }
         }
+        in.close();
     }
     
     /**
