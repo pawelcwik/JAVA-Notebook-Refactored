@@ -20,17 +20,12 @@ public class Notebook
         this.notesArray = new ArrayList<Note>();
     }
 
-    public List<Note> getNotesArray()
-    {
-        return this.notesArray;
-    }
-
-    public void addNote(Note newNote)
+    private void addNote(Note newNote)
     {
         this.notesArray.add(newNote);
     }
 
-    public boolean remNote(Note newNote)
+    private boolean remNote(Note newNote)
     {
         if (this.notesArray.remove(newNote))
         {
@@ -47,13 +42,13 @@ public class Notebook
      */
     public void showNotes()
     {
-        if  (this.getNotesArray().size() == 0)
+        if  (this.notesArray.size() == 0)
         {
             System.out.println("\nThere are no notes in the notebook\n");
         }
         else
         {
-            for (Note element : this.getNotesArray())
+            for (Note element : this.notesArray)
             {
                 System.out.print("\n"+element.getId()+" ");
                 System.out.println(element.getText());
@@ -69,7 +64,7 @@ public class Notebook
     {
         System.out.print("\nNote id number? ");
         int answer = in.nextInt();
-        for (Note element : this.getNotesArray())
+        for (Note element : this.notesArray)
         {
             if (answer == element.getId())
             {
@@ -98,7 +93,7 @@ public class Notebook
         Scanner console = new Scanner(System.in);
         System.out.print("\nWrite id number to remove note: ");
         int answer = console.nextInt();
-        for (Note element : this.getNotesArray())
+        for (Note element : this.notesArray)
         {
             if (answer == element.getId())
             {
@@ -118,7 +113,7 @@ public class Notebook
         Scanner console = new Scanner(System.in);
         System.out.print("\nWrite id number to modify note: ");
         int answer = console.nextInt();
-        for (Note element : this.getNotesArray())
+        for (Note element : this.notesArray)
         {
             if (answer == element.getId())
             {
