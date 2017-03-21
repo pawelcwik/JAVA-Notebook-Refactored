@@ -9,6 +9,7 @@ public class Note
     private int id;
     
     /**
+     * Class Note constructor.
      * Constructs a note with given text.
      * @param text message to be stored in note
      */

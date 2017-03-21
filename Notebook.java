@@ -4,7 +4,15 @@ import java.util.ArrayList;
  */
 public class Notebook
 {
-    private ArrayList<Note> notesArray = new ArrayList<Note>();
+    private ArrayList<Note> notesArray;
+    
+    /**
+     * Class Notebook constructor.
+     */
+    public Notebook()
+    {
+        this.notesArray = new ArrayList<Note>();
+    }
     
     /**
      * Getter for notesArray.

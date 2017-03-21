@@ -4,15 +4,25 @@ import java.util.Scanner;
  */
 public class Menu
 {
-    private Notebook notebook = new Notebook();
-    private static String menuText = 
-    "Menu.\n" +
-    "1.Show all notes\n" +
-    "2.Show note by id\n" +
-    "3.Add note\n" +
-    "4.Remove note\n" +
-    "5.Modify note\n" +
-    "6.Exit";
+    private Notebook notebook;
+    private static String menuText;
+    
+    /**
+     * class Menu constructor.
+     */
+    public Menu()
+    {
+        this.notebook = new Notebook();
+        this.menuText = 
+        "Menu.\n" +
+        "1.Show all notes\n" +
+        "2.Show note by id\n" +
+        "3.Add note\n" +
+        "4.Remove note\n" +
+        "5.Modify note\n" +
+        "6.Exit";
+        
+    }
     
     /**
      * Runs menu in loop.
