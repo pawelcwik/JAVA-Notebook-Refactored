@@ -55,7 +55,13 @@ public class Menu
                     }
                     break;
                 case 2:
-                    notebook.showNoteById(in);
+                    System.out.print("\nNote id number? ");
+                    Note note = notebook.showNoteById(in.nextInt());
+                    if (note!=null) {
+                        System.out.println(note.getText());
+                    } else {
+                        System.out.println("\nThere is no note with " + answer + " id.\n");
+                    }
                     break;
                 case 3:
                     notebook.addNote();

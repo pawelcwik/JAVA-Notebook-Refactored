@@ -55,20 +55,16 @@ public class Notebook
     /**
      * Asks about id and shows note if such exists.
      */
-    public void showNoteById(Scanner in)
+    public Note showNoteById(int id)
     {
-        System.out.print("\nNote id number? ");
-        int answer = in.nextInt();
         for (Note element : this.notesArray)
         {
-            if (answer == element.getId())
+            if (id == element.getId())
             {
-                System.out.println("\n"+element.getText()+"\n");
-                return;
+                return element;
             }
-
         }
-        System.out.println("\nThere is no note with "+answer+" id.\n");
+        return null;
     }
 
     public void addNote()
