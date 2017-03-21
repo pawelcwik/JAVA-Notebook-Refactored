@@ -59,7 +59,7 @@ public class Menu
                     running = false;
                     break;
                  default:
-                     System.out.println("Nieznana komenda. Uzyj 1-6");
+                     System.out.println("Unknown command. Use numbers 1 to 6");
              }
         }
         in.close();
