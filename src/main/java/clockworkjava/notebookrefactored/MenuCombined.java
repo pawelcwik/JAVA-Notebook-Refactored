@@ -1,8 +1,10 @@
+package clockworkjava.notebookrefactored;
+
 import java.util.Scanner;
 /**
  * Holds menu for notebook program.
  */
-public class Menu
+public class MenuCombined
 {
     private Notebook notebook;
     private static String menuText;
@@ -10,7 +12,7 @@ public class Menu
     /**
      * class Menu constructor.
      */
-    public Menu()
+    public MenuCombined()
     {
         this.notebook = new Notebook();
         this.menuText = 
@@ -39,13 +41,13 @@ public class Menu
              {
                 case 1: this.showNotes();
                 break;
-                case 2: this.showNoteById();
+                case 2: this.handleNote("show");
                 break;
                 case 3: this.addNote();
                 break;
-                case 4: this.removeNote();
+                case 4: this.handleNote("remove");
                 break;
-                case 5: this.modifyNote();
+                case 5: this.handleNote("modify");
                 break;
                 case 6: System.exit(1);
                 default: break;
@@ -72,27 +74,7 @@ public class Menu
             System.out.println("\n");
         }
     }
-    
-    /**
-     * Asks about id and shows note if such exists.
-     */
-    public void showNoteById()
-    {
-        Scanner in = new Scanner(System.in);
-        System.out.print("\nNote id number? "); 
-        int answer = in.nextInt();
-        for (Note element : this.notebook.getNotesArray())
-            {
-                if (answer == element.getId())
-                {
-                    System.out.println("\n"+element.getText()+"\n");
-                    return;
-                }
-                
-            }
-        System.out.println("\nThere is no note with "+answer+" id.\n");
-    }
-    
+     
     /**
      * Adds note to notebook.
      */
@@ -109,45 +91,37 @@ public class Menu
     }
     
     /**
-     * Removes note from notebook.
+     * Handles showing, removing and modifying note, based on parameter.
+     * @param task Decides about action. Can be show/remove/modify strin
      */
-    public void removeNote()
+    public void handleNote(String task)
     {
-        Scanner console = new Scanner(System.in);
-        System.out.print("\nWrite id number to remove note: "); 
-        int answer = console.nextInt();
+        Scanner in = new Scanner(System.in);
+        System.out.print("\nNote id number to "+task+"? "); 
+        int answer = in.nextInt();
         for (Note element : this.notebook.getNotesArray())
             {
                 if (answer == element.getId())
-                {
-                    this.notebook.remNote(element);
-                    System.out.println("\nNote removed.\n");
-                    return;
+                { if (task.equals("show")) 
+                    {
+                        System.out.println("\n"+element.getText()+"\n");
+                        return;
+                    } else if (task.equals("remove"))
+                    {
+                        this.notebook.remNote(element);
+                        System.out.println("\nNote removed.\n");
+                        return;
+                    } else if (task.equals("modify"))
+                    {
+                         Scanner console2 = new Scanner(System.in);
+                         System.out.print("\nWrite new text: ");
+                         String newText = console2.nextLine();
+                         element.setText(newText);
+                         System.out.println("\n");
+                         return;
+                    }
                 }
             }
-        System.out.println("\nThere is no note with id "+answer+".\n");
-    }
-    
-    /**
-     * Asks about id and modifies note if such exists.
-     */
-    public void modifyNote()
-    {
-        Scanner console = new Scanner(System.in);
-        System.out.print("\nWrite id number to modify note: "); 
-        int answer = console.nextInt();
-        for (Note element : this.notebook.getNotesArray())
-            {
-                if (answer == element.getId())
-                {
-                    Scanner console2 = new Scanner(System.in);
-                    System.out.print("\nWrite new text: ");
-                    String newText = console2.nextLine();
-                    element.setText(newText);
-                    System.out.println("\n");
-                    return;
-                }
-            }
-        System.out.println("\nThere is no note with id "+answer+".\n");
+        System.out.println("\nThere is no note with "+answer+" id.\n");
     }
 }

@@ -1,6 +1,5 @@
-/**
- * Note that stores text and has id number.
- */
+package clockworkjava.notebookrefactored;
+
 public class Note
 {
     private static int lastId = 0;

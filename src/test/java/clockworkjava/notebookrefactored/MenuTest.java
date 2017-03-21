@@ -1,3 +1,4 @@
+package clockworkjava.notebookrefactored;
 /**
  * Stores tests for Menu class, actual and 
  * expected answers are printed one after another.

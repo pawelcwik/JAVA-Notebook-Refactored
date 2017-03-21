@@ -1,3 +1,5 @@
+package clockworkjava.notebookrefactored;
+
 import java.util.ArrayList;
 /**
  * Notebook that stores up to 10 notes.

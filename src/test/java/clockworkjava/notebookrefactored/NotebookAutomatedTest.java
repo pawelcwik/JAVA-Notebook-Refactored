@@ -1,3 +1,5 @@
+package clockworkjava.notebookrefactored;
+
 /**
  * Stores tests for Notebook class. Prints message about
  * error only if there is one, also prints summary with

@@ -1,3 +1,5 @@
+package clockworkjava.notebookrefactored;
+
 /**
  * Stores tests for Note class, actual and expected
  * answers are printed one after another.
