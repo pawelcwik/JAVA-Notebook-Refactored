@@ -5,6 +5,7 @@
 package clockworkjava.notebookrefactored;
 
 import java.util.Scanner;
+
 /**
  * Holds menu for notebook program.
  */
@@ -12,10 +13,7 @@ public class Menu
 {
     private Notebook notebook;
     private static String menuText;
-    
-    /**
-     * class Menu constructor.
-     */
+
     public Menu()
     {
         this.notebook = new Notebook();
@@ -29,10 +27,7 @@ public class Menu
             "6.Exit";
         
     }
-    
-    /**
-     * Runs menu in loop.
-     */
+
     public void runMenu() 
     {
         while (true) 
@@ -98,10 +93,7 @@ public class Menu
             }
         System.out.println("\nThere is no note with "+answer+" id.\n");
     }
-    
-    /**
-     * Adds note to notebook.
-     */
+
     public void addNote()
     {
         int newNoteId = Note.getLastId();
@@ -113,10 +105,7 @@ public class Menu
         notebook.addNote(newNote);
         System.out.println("\n");
     }
-    
-    /**
-     * Removes note from notebook.
-     */
+
     public void removeNote()
     {
         Scanner console = new Scanner(System.in);
