@@ -41,19 +41,19 @@ public class Menu
              switch (answer)
              {
                 case 1:
-                    this.showNotes();
+                    notebook.showNotes();
                     break;
                 case 2:
-                    this.showNoteById();
+                    notebook.showNoteById(in);
                     break;
                 case 3:
-                    this.addNote();
+                    notebook.addNote();
                     break;
                 case 4:
-                    this.removeNote();
+                    notebook.removeNote();
                     break;
                 case 5:
-                    this.modifyNote();
+                    notebook.modifyNote();
                     break;
                 case 6:
                     running = false;
@@ -63,97 +63,5 @@ public class Menu
              }
         }
         in.close();
-    }
-    
-    /**
-     * Shows all notes in notebook, together with id numbers.
-     */
-    public void showNotes()
-    {
-        if  (this.notebook.getNotesArray().size() == 0)
-        {
-            System.out.println("\nThere are no notes in the notebook\n");
-        }
-        else
-        {
-            for (Note element : this.notebook.getNotesArray())
-            {
-                System.out.print("\n"+element.getId()+" ");
-                System.out.println(element.getText());
-            }
-            System.out.println("\n");
-        }
-    }
-    
-    /**
-     * Asks about id and shows note if such exists.
-     */
-    public void showNoteById()
-    {
-        Scanner in = new Scanner(System.in);
-        System.out.print("\nNote id number? "); 
-        int answer = in.nextInt();
-        for (Note element : this.notebook.getNotesArray())
-            {
-                if (answer == element.getId())
-                {
-                    System.out.println("\n"+element.getText()+"\n");
-                    return;
-                }
-                
-            }
-        System.out.println("\nThere is no note with "+answer+" id.\n");
-    }
-
-    public void addNote()
-    {
-        int newNoteId = Note.getLastId();
-        newNoteId += 1;
-        Scanner console = new Scanner(System.in);
-        System.out.print("\nWrite note (id number "+ newNoteId + "): "); 
-        String newNoteText = console.nextLine();
-        Note newNote = new Note(newNoteText);
-        notebook.addNote(newNote);
-        System.out.println("\n");
-    }
-
-    public void removeNote()
-    {
-        Scanner console = new Scanner(System.in);
-        System.out.print("\nWrite id number to remove note: "); 
-        int answer = console.nextInt();
-        for (Note element : this.notebook.getNotesArray())
-            {
-                if (answer == element.getId())
-                {
-                    this.notebook.remNote(element);
-                    System.out.println("\nNote removed.\n");
-                    return;
-                }
-            }
-        System.out.println("\nThere is no note with id "+answer+".\n");
-    }
-    
-    /**
-     * Asks about id and modifies note if such exists.
-     */
-    public void modifyNote()
-    {
-        Scanner console = new Scanner(System.in);
-        System.out.print("\nWrite id number to modify note: "); 
-        int answer = console.nextInt();
-        for (Note element : this.notebook.getNotesArray())
-            {
-                if (answer == element.getId())
-                {
-                    Scanner console2 = new Scanner(System.in);
-                    System.out.print("\nWrite new text: ");
-                    String newText = console2.nextLine();
-                    element.setText(newText);
-                    System.out.println("\n");
-                    return;
-                }
-            }
-        System.out.println("\nThere is no note with id "+answer+".\n");
     }
 }
