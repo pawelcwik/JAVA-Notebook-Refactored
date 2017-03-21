@@ -64,7 +64,9 @@ public class Menu
                     }
                     break;
                 case 3:
-                    notebook.addNote();
+                    String newNoteText = in.nextLine();
+                    Note n = notebook.addNote(newNoteText);
+                    System.out.println("Note added with id " + n.getId() + "\n");
                     break;
                 case 4:
                     notebook.removeNote();
@@ -80,5 +82,9 @@ public class Menu
              }
         }
         in.close();
+    }
+
+    Notebook getNotebook() {
+        return notebook;
     }
 }

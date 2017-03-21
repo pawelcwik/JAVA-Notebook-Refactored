@@ -41,7 +41,6 @@ public class Note
         this.id = number;
     }
 
-
     public static int getLastId()
     {
         return lastId;

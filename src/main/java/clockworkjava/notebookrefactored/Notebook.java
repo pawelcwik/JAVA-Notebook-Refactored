@@ -67,16 +67,11 @@ public class Notebook
         return null;
     }
 
-    public void addNote()
+    public Note addNote(String newNoteText)
     {
-        int newNoteId = Note.getLastId();
-        newNoteId += 1;
-        Scanner console = new Scanner(System.in);
-        System.out.print("\nWrite note (id number "+ newNoteId + "): ");
-        String newNoteText = console.nextLine();
         Note newNote = new Note(newNoteText);
         addNote(newNote);
-        System.out.println("\n");
+        return newNote;
     }
 
     public void removeNote()
