@@ -1,3 +1,7 @@
+// Refactored by pawel cwik
+//
+// https://www.youtube.com/channel/UCTQKVB4Co0fGfyjNJky6kPg
+// https://www.facebook.com/clockworkjava
 package clockworkjava.notebookrefactored;
 
 import java.util.Scanner;
