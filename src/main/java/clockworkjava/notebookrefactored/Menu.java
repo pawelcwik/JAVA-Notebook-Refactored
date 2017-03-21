@@ -20,13 +20,13 @@ public class Menu
     {
         this.notebook = new Notebook();
         this.menuText = 
-        "Menu.\n" +
-        "1.Show all notes\n" +
-        "2.Show note by id\n" +
-        "3.Add note\n" +
-        "4.Remove note\n" +
-        "5.Modify note\n" +
-        "6.Exit";
+            "Menu.\n" +
+            "1.Show all notes\n" +
+            "2.Show note by id\n" +
+            "3.Add note\n" +
+            "4.Remove note\n" +
+            "5.Modify note\n" +
+            "6.Exit";
         
     }
     

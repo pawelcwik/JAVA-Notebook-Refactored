@@ -5,12 +5,14 @@
 package clockworkjava.notebookrefactored;
 
 import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Notebook that stores up to 10 notes.
  */
 public class Notebook
 {
-    private ArrayList<Note> notesArray;
+    private List<Note> notesArray;
     
     /**
      * Class Notebook constructor.
@@ -24,7 +26,7 @@ public class Notebook
      * Getter for notesArray.
      * @return notesArray of Notebook object.
      */
-    public ArrayList<Note> getNotesArray()
+    public List<Note> getNotesArray()
     {
         return this.notesArray;
     }
