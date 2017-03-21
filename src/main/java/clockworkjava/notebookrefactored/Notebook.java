@@ -40,20 +40,15 @@ public class Notebook
     /**
      * Shows all notes in notebook, together with id numbers.
      */
-    public void showNotes()
+    public List<Note> showNotes()
     {
         if  (this.notesArray.size() == 0)
         {
-            System.out.println("\nThere are no notes in the notebook\n");
+            throw new IllegalStateException();
         }
         else
         {
-            for (Note element : this.notesArray)
-            {
-                System.out.print("\n"+element.getId()+" ");
-                System.out.println(element.getText());
-            }
-            System.out.println("\n");
+            return this.notesArray;
         }
     }
 

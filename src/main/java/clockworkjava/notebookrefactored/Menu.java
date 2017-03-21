@@ -4,6 +4,7 @@
 // https://www.facebook.com/clockworkjava
 package clockworkjava.notebookrefactored;
 
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -41,7 +42,17 @@ public class Menu
              switch (answer)
              {
                 case 1:
-                    notebook.showNotes();
+                    try {
+                        List<Note> notes = notebook.showNotes();
+                        for (Note element : notes)
+                        {
+                            System.out.print("\n"+element.getId()+" ");
+                            System.out.println(element.getText());
+                        }
+                        System.out.println("\n");
+                    } catch(IllegalStateException e) {
+                        System.out.println("\nThere are no notes in the notebook\n");
+                    }
                     break;
                 case 2:
                     notebook.showNoteById(in);
