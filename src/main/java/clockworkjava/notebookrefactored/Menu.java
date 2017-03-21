@@ -37,8 +37,10 @@ public class Menu
         {
              System.out.println(menuText);
 
-             System.out.print("What would you like to do? "); 
+             System.out.println("What would you like to do? ");
              int answer = in.nextInt();
+             // http://stackoverflow.com/questions/23450524/java-scanner-doesnt-wait-for-user-input
+             in.nextLine();
              switch (answer)
              {
                 case 1:
@@ -55,7 +57,7 @@ public class Menu
                     }
                     break;
                 case 2:
-                    System.out.print("\nNote id number? ");
+                    System.out.println("\nNote id number? ");
                     Note note = notebook.showNoteById(in.nextInt());
                     if (note!=null) {
                         System.out.println(note.getText());
@@ -64,6 +66,7 @@ public class Menu
                     }
                     break;
                 case 3:
+                    System.out.println("Note text: ");
                     String newNoteText = in.nextLine();
                     Note n = notebook.addNote(newNoteText);
                     System.out.println("Note added with id " + n.getId() + "\n");
